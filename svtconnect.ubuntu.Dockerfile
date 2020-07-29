@@ -11,7 +11,7 @@ LABEL license="GNU General Public License v3"
 LABEL DESCRIPTION="CTC SimpliVity Pythone container based on Ubuntu"
 # Install Python 3.6
 RUN apt-get update
-RUN apt-get -y install python3.6 && \
+RUN apt-get -y install python3.8 && \
 	apt-get -y install python3-pip && \
 	apt-get -y install vim && \
 	apt-get -y install cron 
@@ -28,4 +28,4 @@ COPY svtPromConnector.py /opt/svt
 COPY SvtConnector.key /opt/svt
 COPY SvtConnector.xml /opt/svt
 # Start the collector
-CMD /usr/bin/python3.6 /opt/svt/svtPromConnector.py
+CMD /usr/bin/python3 /opt/svt/svtPromConnector.py
